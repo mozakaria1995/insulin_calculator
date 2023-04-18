@@ -1,0 +1,133 @@
+import 'Models/food_model.dart';
+
+String breakfastImagePath(String im)=>"assets/images/breakfast/$im.png";
+String dinnerImagePath(String im)=>"assets/images/dinner/$im.png";
+String fruitImagePath(String im)=>"assets/images/vegtable/$im.png";
+String nutsImagePath(String im)=>"assets/images/nuts/$im.png";
+
+List <FoodModel> breakfastList=[
+  FoodModel(image: breakfastImagePath("bread"), title: "عيش بلدى", description: "ربع رغيف حوالى 30 جرام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("toast"), title: "توست اسمر", description: "شريحة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("lightBread"), title: "العيش السن", description: "نصف رغيف", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("boksmat"), title: "بقسماط بدون سمسم", description: "عدد 2 متوسط الحجم", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("fino"), title: "عيش فينو", description: "نصف رغيف حوالى 26 جرام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("fool"), title: "فول مدمس", description: "عدد 3 ملاعق ممسوحة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("shofan"), title: "بليلة - شوفان", description: "عدد 3 ملاعق ممسوحة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("falafel"), title: "طعمية", description: "عدد 1 قرص صغير", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("feteer"), title: "فطير", description: "فى حجم ربع رغيف بلدى", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("cornflakes"), title: "كورن فلكس", description: "علبة صغيرة", type: "كربوهيدرات", carbRatio: "30"),
+  FoodModel(image: breakfastImagePath("milk"), title: "لبن كامل الدسم", description: "مج كبير", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("halfskimmed"), title: "لبن نصف الدسم", description: "مج كبير", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("skimmed"), title: "لبن خالى الدسم", description: "مج كبير", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("rayeb"), title: "لبن رايب", description: "مج كبير", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("zabady"), title: "زبادى كامل الدسم", description: "عدد 2 كوب زبادى صغير", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("zabadyfruit"), title: "مشروب زبادى بالفواكة لايت", description: "نصف كوب متوسط", type: "كربوهيدرات", carbRatio: "10"),
+  FoodModel(image: breakfastImagePath("zabadyfruit2"), title: "زبادى بالفاكهة", description: "علبة زبادى صغير", type: "كربوهيدرات", carbRatio: "18"),
+  FoodModel(image: breakfastImagePath("boiledegg"), title: "بيض مسلوق", description: "بيضة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("friedegg"), title: "بيض محمر", description: "بيضة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("bastrami"), title: "بسطرمة", description: "شريحة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("sausage"), title: "سوسيس", description: "قطعة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("burger"), title: "هامبرجر", description: "قطعة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("arish"), title: "جبن قريش", description: "حجم جبنة نستو", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("romy"), title: "جبن رومى", description: "شريحة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("goda"), title: "جبن جودة", description: "شريحة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("chedder"), title: "جبن شيدر", description: "شريحة", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("nesto"), title: "جبن نستو", description: "عدد 2 مكعب", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("rkford"), title: "جبن ركفورد", description: "فى حجم الجبنة النستو", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("dansh"), title: "دانش", description: "حجم البيضة", type: "كربوهيدرات", carbRatio: "24"),
+  FoodModel(image: breakfastImagePath("danshfruit"), title: "دانش بالفواكة", description: "حجم البيضة", type: "كربوهيدرات", carbRatio: "28"),
+  FoodModel(image: breakfastImagePath("croissent"), title: "كرواسون", description: "قطعة حجم كف اليد", type: "كربوهيدرات", carbRatio: "28"),
+  FoodModel(image: breakfastImagePath("salad"), title: "سلطة خضراء", description: "طبق متوسط", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("milkpowder"), title: "لبن بودرة", description: "عدد 2 معالق", type: "كربوهيدرات", carbRatio: "12"),
+  FoodModel(image: breakfastImagePath("coffemix"), title: "كوفى ميكس", description: "كيس", type: "كربوهيدرات", carbRatio: "11"),
+  FoodModel(image: breakfastImagePath("zabado"), title: "زبادو صغير", description: "عبوة", type: "كربوهيدرات", carbRatio: "28"),
+  FoodModel(image: breakfastImagePath("zbaadolarge"), title: "زبادو كبير", description: "عبوة", type: "كربوهيدرات", carbRatio: "55"),
+  FoodModel(image: breakfastImagePath("suger"), title: "سكر او عسل او مربى", description: "معلقة صغيرة", type: "كربوهيدرات", carbRatio: "5"),
+  FoodModel(image: breakfastImagePath("sugerlarge"), title: "سكر او عسل او مربى", description: "معلقة كبيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: breakfastImagePath("fries"), title: "بطاطس محمرة", description: "عدد 10 صوابع حجم 10 جرام", type: "كربوهيدرات", carbRatio: "10"),
+  FoodModel(image: breakfastImagePath("shofan2"), title: "شوفان", description: "عدد 3 معالق", type: "كربوهيدرات", carbRatio: "15"),
+
+
+];
+
+List <FoodModel> dinnerList=[
+  FoodModel(image: dinnerImagePath("whiterice"), title: "أرز أبيض", description: "عدد 3 ملعقة طعام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("macroni"), title: "مكرونة مسلوقة-فريك", description: "عدد 4 ملعقة طعام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("koshri"), title: "كشرى", description: "عدد 4 ملعقة طعام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("kromb"), title: "محشى كرنب", description: "عدد 6 أصابع متوسطة أو 8 أصابع صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("kosa"), title: "محشى كوسه", description: "صباع متوسط", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("betngan"), title: "محشى باذنجان", description: "صباع متوسط", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("felfel"), title: "محشى طماطم او فلفل", description: "ثمرة متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("war3enab"), title: "محشى ورق عنب", description: "عدد 6 أصابع متوسطة أو 8 أصابع صغيرة ", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("potato"), title: "بطاطس", description: "ثمرة صغيرة او 4 ترانش", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("sweetpotato"), title: "بطاطا", description: "ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("kolkas"), title: "قلقاس", description: "عدد 5 ملاعق", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("besla"), title: "بسلة", description: "نصف كوب ( 3 معالق )", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("khodar"), title: "خضار غير نشوى", description: "من 6 الى 9 ملاعق", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("shorbtkhodar"), title: "شوربة خضار", description: "1 كوب", type: "كربوهيدرات", carbRatio: "24"),
+  FoodModel(image: dinnerImagePath("bqool"), title: "بقول", description: "عدد 3 ملاعق", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("rokak"), title: "قطعة بحجم ورقة الكوتشينة - جلاش باللحم المفروم", description: "ربع رغيف حوالى 30 جرام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("macronioven"), title: "مكرونة فرن", description: "قطعة بحجم ورقة الكوتشينة", type: "كربوهيدرات", carbRatio: "45"),
+  FoodModel(image: dinnerImagePath("betlomeat"), title: "لحم بتلو", description: "حجم بطن كف اليد", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: dinnerImagePath("dekromy"), title: "فراخ-ارانب-ديك رومى", description: "حجم بطن كف اليد", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: dinnerImagePath("duck"), title: "بط - حمام", description: "حجم بطن كف اليد", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: dinnerImagePath("meatdany"), title: "لحم ضانى - كندوز", description: "حجم بطن كف اليد", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: dinnerImagePath("fish"), title: "سمك - تونة", description: "حجم بطن كف اليد", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: breakfastImagePath("salad"), title: "سلطة خضراء", description: "طبق متوسط", type: "كربوهيدرات", carbRatio: "-"),
+  FoodModel(image: dinnerImagePath("kfc"), title: "KFC", description: "قطعة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("nagts"), title: "ناجتس", description: "عدد 4 قطع", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("paneh"), title: "بانية", description: "عدد 2 شريحة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("lesanasfor"), title: "لسان عصفور او شعرية", description: "عدد 4 معالق", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("carrot"), title: "جزر او بنجر", description: "ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "6"),
+  FoodModel(image: dinnerImagePath("ads"), title: "شوربة عدس بدون شعرية", description: "بولة صغيرة", type: "كربوهيدرات", carbRatio: "20"),
+  FoodModel(image: dinnerImagePath("ads2"), title: "شوربة عدس بالشعرية", description: "بولة صغيرة", type: "كربوهيدرات", carbRatio: "30"),
+  FoodModel(image: dinnerImagePath("katshb"), title: "كاتشب", description: "كيس صغير", type: "كربوهيدرات", carbRatio: "3"),
+  FoodModel(image: dinnerImagePath("thomya"), title: "ثومية او سلطة طحينة", description: "عدد 3 معالق", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: dinnerImagePath("pepsi"), title: "بيبسى", description: "حجم 350 مل", type: "كربوهيدرات", carbRatio: "72.4"),
+
+
+];
+
+List <FoodModel> fruitList=[
+  FoodModel(image: fruitImagePath("apple"), title: "تفاح", description: "ثمرة متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("komthra"), title: "كمثرى", description: "ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("orange"), title: "برتقال", description: "برتقالة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("guava"), title: "جوافة", description: "ثمرة متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("grabefruit"), title: "جريبفروت", description: "ثمرة متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("yosfy"), title: "يوسفى", description: "عدد 2 ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("khokh"), title: "خوخ", description: "عدد 2 ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("barkok"), title: "برقوق", description: "عدد 2 برقوق صغير", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("meshmesh"), title: "مشمش", description: "عدد 2 مشمش صغير", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("kiwi"), title: "كيوى", description: "عدد 2 ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("ananas"), title: "اناناس", description: "عدد 4/3 مج قطع اناناس", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("kantalob"), title: "كنتالوب", description: "عدد 4/3 مج قطع كنتالوب", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("frawla"), title: "فراولة", description: "عدد 4/3 مج قطع فراولة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("shamam"), title: "شمام", description: "مج قطع شمام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("roman"), title: "رمان", description: "عنصف ثمرة متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("kraze"), title: "كريز", description: "عدد 10 حبات", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("banana"), title: "موز", description: "ثمرة صغيرة موز بلدى", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("watermelon"), title: "بطيخ", description: "شريحة حجم كف اليد", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("dates"), title: "بلح احمر", description: "عدد 2 بلحة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("grabes"), title: "عنب", description: "عدد 10 حبات", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("mango"), title: "مانجو", description: "شريحة مانجو", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("teen"), title: "تين شوكى", description: "ثمرة في حجم يوسفى متوسطة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("balh"), title: "بلح أصفر أو رطب", description: "عدد 2 ثمرة صغيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("zebeb"), title: "زبيب", description: "ملعقة كبيرة", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: fruitImagePath("toot"), title: "توت", description: "كوب", type: "كربوهيدرات", carbRatio: "15"),
+
+
+];
+
+List<FoodModel> nutsList=[
+  FoodModel(image: nutsImagePath("leb"), title: "لب أبيض", description: "ملىء راحة اليد حجم 100 جرام", type: "كربوهيدرات", carbRatio: "11"),
+  FoodModel(image: nutsImagePath("lebsory"), title: "لب سورى", description: "ملىء راحة اليد حجم 100 جرام", type: "كربوهيدرات", carbRatio: "24"),
+  FoodModel(image: nutsImagePath("folsodany"), title: "فول سودانى", description: "ملىء راحة اليد حجم 100 جرام", type: "كربوهيدرات", carbRatio: "16"),
+  FoodModel(image: nutsImagePath("terms"), title: "ترمس", description: "ملىء راحة اليد حجم 100 جرام", type: "كربوهيدرات", carbRatio: "10"),
+  FoodModel(image: nutsImagePath("feshar"), title: "فشار", description: "حجم 2 كوب متوسط", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: nutsImagePath("chipsy"), title: "شيبسى", description: "كيس شيبسى وزن 50 جرام", type: "كربوهيدرات", carbRatio: "30"),
+  FoodModel(image: nutsImagePath("flamnco"), title: "فلامنكو شوفان-سودانى", description: "وزن 50 جرام", type: "كربوهيدرات", carbRatio: "15"),
+  FoodModel(image: nutsImagePath("flamncocheese"), title: "فلامنكو بالجبنة", description: "وزن 50 جرام", type: "كربوهيدرات", carbRatio: "40"),
+  FoodModel(image: nutsImagePath("windows"), title: "كيس ويندوز", description: "وزن 50 جرام", type: "كربوهيدرات", carbRatio: "40"),
+  FoodModel(image: nutsImagePath("bakerols"), title: "بيك رولز", description: "وزن 50 جرام", type: "كربوهيدرات", carbRatio: "30"),
+
+];
