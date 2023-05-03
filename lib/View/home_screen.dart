@@ -15,110 +15,163 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
+    return Scaffold(
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
               color: HexColor("#3968FF"),
               width: double.infinity,
-                child: Stack(
-                  alignment: Alignment.centerRight,
-                  children: [
-                    SvgPicture.asset('assets/images/1.svg',fit: BoxFit.fill
-                      ,),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                      child: Text("...مرحباً بك",style: TextStyle(color: Colors.white,fontSize: 30),),
-                    )
-
-                  ],
-                )),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+              child: Stack(
+                alignment: Alignment.centerRight,
                 children: [
-                  GestureDetector(
-                    behavior: HitTestBehavior.translucent,
-                    onTap: (){
-                      navigateTo(context, CalculatorScreen());
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset("assets/images/aaaaa.svg"),
-                          SizedBox(width: 10,),
-                          Text("حسبة الانسولين",style: TextStyle(fontSize: 29,color: primaryColor),)
-                        ],
-                      ),
-                    ),
+                  SvgPicture.asset(
+                    'assets/images/1.svg',
+                    fit: BoxFit.fill,
                   ),
-                  Divider(color: Colors.grey[500],),
-                  GestureDetector(
-    behavior: HitTestBehavior.translucent,
-    onTap: (){
-    navigateTo(context, FoodCategoriesScreen());},
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset("assets/images/scheduale.svg"),
-                          SizedBox(width: 10,),
-                          Text("جدول الوجبات",style: TextStyle(fontSize: 29,color: primaryColor),)
-                        ],
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: Text(
+                      "...مرحباً بك",
+                      style: TextStyle(color: Colors.white, fontSize: 30),
                     ),
-                  ),
-                  Divider(color: Colors.grey[500],),
-                  GestureDetector(
-                    behavior: HitTestBehavior.translucent,
-                    onTap: (){
-                      navigateTo(context, SettingsScreen());},
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset("assets/images/settings.svg"),
-                          SizedBox(width: 10,),
-                          Text("الاعدادات",style: TextStyle(fontSize: 29,color: primaryColor),)
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider(color: Colors.grey[500],),
-                  GestureDetector(
-                    behavior: HitTestBehavior.translucent,
-                    onTap: (){
-                      navigateTo(context, ContactUsScreen());},
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset("assets/images/contactus.svg"),
-                          SizedBox(width: 10,),
-                          Text("اتصل بنا",style: TextStyle(fontSize: 29,color: primaryColor),)
-                        ],
-                      ),
-                    ),
-                  ),
-
+                  )
                 ],
-              ),
-            )
+              )),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+
+                      if (setPoint == "0" || ICR == "0" || ICF == "0") {
+                        print(setPoint);
+                        print(ICR);
+                        print(ICF);
+                        navigateTo(context, SettingsScreen());
+                      } else {
+                        print(setPoint);
+                        print(ICR);
+                        print(ICF);
+                        navigateTo(context, CalculatorScreen());
+                      }
 
 
-          ],
-        ),
-      )
-    );
+
+
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            height: MediaQuery.of(context).size.height / 9,
+                            child: Image.asset("assets/images/5.png")),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "حسبة الانسولين",
+                          style: TextStyle(fontSize: 29, color: primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey[500],
+                ),
+                GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    navigateTo(context, FoodCategoriesScreen());
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            height: MediaQuery.of(context).size.height / 9,
+                            child: Image.asset("assets/images/6.png")),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "جدول الوجبات",
+                          style: TextStyle(fontSize: 29, color: primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey[500],
+                ),
+                GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    navigateTo(context, SettingsScreen());
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            height: MediaQuery.of(context).size.height / 9,
+                            child: Image.asset("assets/images/7.png")),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "الاعدادات",
+                          style: TextStyle(fontSize: 29, color: primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey[500],
+                ),
+                GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+                  onTap: () {
+                    navigateTo(context, ContactUsScreen());
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            height: MediaQuery.of(context).size.height / 9,
+                            child: Image.asset("assets/images/8.png")),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "اتصل بنا",
+                          style: TextStyle(fontSize: 29, color: primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    ));
   }
 }

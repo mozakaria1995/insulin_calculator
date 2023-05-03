@@ -8,9 +8,9 @@ late SharedPreferences localStorage;
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  localStorage = await SharedPreferences.getInstance();
 
   runApp(const MyApp());
-  localStorage = await SharedPreferences.getInstance();
 
 }
 
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    ICF;
     return MaterialApp(
         builder: (context, child) {
           return MediaQuery(
@@ -31,7 +32,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: "Tajawal",
-
+    outlinedButtonTheme: OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
+    side: BorderSide(
+    color: Colors.black,
+    width: 1,
+    ))),
 
         colorScheme:
         ColorScheme.fromSwatch().copyWith(primary: primaryColor),

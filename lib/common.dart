@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'main.dart';
+
 HexColor primaryColor=HexColor("#3968FF");
 //////////////////////////////////////////////////
 svgPicture(image)=>SvgPicture.asset("assets/images/${image}.svg",fit: BoxFit.fill);
@@ -65,6 +67,6 @@ Widget appBarLogo()=>Container(
     ));
 
 //////////////////////////////////
-String setPoint="120";
-String ICR="15";
-String ICF="40";
+String setPoint=localStorage.getString("SP")??"0";
+String ICR=localStorage.getString("ICR")??"0";
+String ICF=localStorage.getString("ICF")??"0";

@@ -194,6 +194,96 @@ class FoodCategoriesScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 18.0),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+
+                  onTap: (){
+                    navigateTo(context, ScheduleScreen("اكل السوبرماركت",superMarketList));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Colors.grey,
+                                width: 2.0
+                            ),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(5.0) //                 <--- border radius here
+                            ),
+
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                    height:100,
+                                    width:100,
+                                    child: Image.asset("assets/images/supermarket.png")),
+                                SizedBox(width: 10,),
+
+                                Expanded(child: Text("اكل السوبرماركت",style: TextStyle(fontSize: 23,color: primaryColor),))
+
+                              ],
+                            ),
+                          ),
+
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 18.0),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.translucent,
+
+                  onTap: (){
+                    navigateTo(context, ScheduleScreen("اكل الشارع",kfcList));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(24,0,24, 24,),
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Colors.grey,
+                                width: 2.0
+                            ),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(5.0) //                 <--- border radius here
+                            ),
+
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                    height:100,
+                                    width:100,
+                                    child: Image.asset("assets/images/streetfood.png")),
+                                SizedBox(width: 10,),
+
+                                Expanded(child: Text("اكل التيك اواى",style: TextStyle(fontSize: 23,color: primaryColor),))
+
+                              ],
+                            ),
+                          ),
+
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

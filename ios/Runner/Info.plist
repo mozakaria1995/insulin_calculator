@@ -6,6 +6,10 @@
 <array>
   <string>tel</string>
 </array>
+<key>NSLocalNetworkUsageDescription</key>
+<string>Allow the app to discover and connect to other devices on the local network</string>
+
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

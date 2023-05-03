@@ -16,6 +16,7 @@ dependencies:
   shared_preferences: ^2.1.0
   flutter_phone_direct_caller: ^2.1.1
   hexcolor: ^3.0.1
+  url_launcher: ^6.1.10
   flutter_svg: ^2.0.4
   flutter:
     sdk: flutter
@@ -51,6 +52,11 @@ flutter:
      - assets/images/vegtable/
      - assets/images/dinner/
      - assets/images/nuts/
+     - assets/images/cinabbon/
+     - assets/images/kfc/
+     - assets/images/mac/
+     - assets/images/street/
+     - assets/images/supermarket/
   #   - images/a_dot_ham.jpeg
 
 

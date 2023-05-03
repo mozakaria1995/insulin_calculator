@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:insulin_calculator/common.dart';
 import 'package:insulin_calculator/main.dart';
 
+import 'calculator_screen.dart';
+
 class SettingsScreen extends StatefulWidget {
 
 
@@ -24,8 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Form(
           key: _formKey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end
-            ,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               appBarLogo(),
               Padding(
@@ -131,20 +132,39 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: Center(child: Container(
-                    child: ElevatedButton(onPressed: (){
-                          setState(() {
+                  child: Center(child: ElevatedButton(onPressed: (){
+                        setState(() {
 
-                          showAlertDialog(context);
-                        });
-
+                        showAlertDialog(context);
+                      });
 
 
-                    }, child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: Text("مسح و ادخال بيانات جديدة",style: TextStyle(fontSize: 29,),),
-                    )),
-                  )),
+
+                  }, child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    child: Text("مسح و ادخال بيانات جديدة",style: TextStyle(fontSize: 29,),),
+                  ))),
+                ),
+              ),
+              Visibility(
+                visible: enableTextField?false:true,
+
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(24,12,24,40),
+                  child: Center(
+                    child: Container(width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          navigateTo(context, CalculatorScreen());
+                        },
+
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12.0),
+                          child: Text('حساب جرعة الانسولين',style: TextStyle(fontSize: 29,color: Colors.black) ,),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
 
