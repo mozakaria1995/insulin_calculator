@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insulin_calculator/View/language_screen.dart';
+import 'package:insulin_calculator/common.dart';
 
 import 'home_screen.dart';
 
@@ -64,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen>  with TickerProviderStateMi
             () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const LanguageScreen(),
+              builder: (context) => selectedLang==""? LanguageScreen():HomeScreen(),
             )));
 
     _opacityController = AnimationController(

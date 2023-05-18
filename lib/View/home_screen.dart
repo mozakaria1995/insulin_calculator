@@ -8,6 +8,7 @@ import 'package:insulin_calculator/View/food_categories_screen.dart';
 import 'package:insulin_calculator/View/settings_screen.dart';
 import 'package:insulin_calculator/common.dart';
 
+import '../main.dart';
 import 'calculator_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,6 +16,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    selectedLang=localStorage.getString("lang")??"";
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(

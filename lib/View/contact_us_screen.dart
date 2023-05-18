@@ -105,11 +105,12 @@ class ContactUsScreen extends StatelessWidget {
   }
 
   Future _launchURL() async {
-    final Uri _url = Uri.parse("https://www.facebook.com/diabeticneuropathyclinic?mibextid=ZbWKwL"
+    final Uri _url = Uri.parse("https://www.facebook.com/diabeticneuropathyclinic?mibextid=ZbWKwL",
         );
 
     if (!await launchUrl(
       _url,
+        mode: LaunchMode.externalApplication
       // mode: LaunchMode.externalNonBrowserApplication,
     )) {
       throw Exception('Could not launch $_url');

@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
     ICF;
     return MaterialApp(
         builder: (context, child) {
+          print(selectedLang);
+
           return MediaQuery(
             child: child!,
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

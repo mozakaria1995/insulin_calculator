@@ -1,8 +1,9 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:insulin_calculator/View/calculator_screen.dart';
+
 import 'package:insulin_calculator/View/home_screen.dart';
+import 'package:insulin_calculator/main.dart';
 
 import '../common.dart';
 
@@ -27,7 +28,8 @@ class LanguageScreen extends StatelessWidget {
               Container(
                   width: double.infinity,
                 child: ElevatedButton(onPressed: (){
-                  selectedLang="ar";
+                  localStorage.setString("lang", "ar");
+
                   navigateTo(context, HomeScreen());
                 }, child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
@@ -38,7 +40,7 @@ class LanguageScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
                   child: ElevatedButton(onPressed: (){
-                    selectedLang="en";
+                    localStorage.setString("lang", "en");
                     navigateTo(context, HomeScreen());
 
                   }, child: Padding(

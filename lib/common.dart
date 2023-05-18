@@ -57,16 +57,18 @@ String englishNumbers(String input) {
 
 
 //////////////////////////////////
-String selectedLang="en";
+String selectedLang=localStorage.getString("lang")??"";
 
 ///////////////////////////////////////
 Widget appBarLogo()=>Container(
     color: HexColor("#3968FF"),
     width: double.infinity,
-    child: SvgPicture.asset('assets/images/calculatorheader.svg',fit: BoxFit.cover
+    child: SvgPicture.asset('assets/images/hand.svg',fit: BoxFit.fitHeight,alignment: Alignment.topLeft,
     ));
 
 //////////////////////////////////
 String setPoint=localStorage.getString("SP")??"0";
 String ICR=localStorage.getString("ICR")??"0";
 String ICF=localStorage.getString("ICF")??"0";
+
+
