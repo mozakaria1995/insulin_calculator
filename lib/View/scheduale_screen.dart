@@ -24,6 +24,10 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
   String searchText = '';
   final searchController = TextEditingController();
+  Offset? dragGesturePosition;
+  bool isHoldingDown = false;
+  ScrollController scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     selectedLang=localStorage.getString("lang")??"";
@@ -83,73 +87,175 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         ),
       ),
 
+         floatingActionButton: FloatingActionButton(
+           onPressed: (){
+             setState(() {
 
-        body: MagnifierWidget(Column(
-        children: [
+               if (isHoldingDown) {
+                 print("eeeee");
+                 isHoldingDown = false;
+                 // dragGesturePosition = null;
+               } else {
+
+                 print("ccccc");
+
+                 final currentOffset = scrollController.offset;
+
+                 setState(() {
+                   isHoldingDown = true;
+                   dragGesturePosition = Offset(0, currentOffset);
+
+
+                 });
 
 
 
-          widget.foodList!=kfcList?
-          foodView(filteredList,"default")
-              :
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 24.0),
-                child: Container(
-                  height: 100,
 
-                  width: 200,
-                  child: Image.asset(streetFoodType[0]),
+
+               }
+
+
+
+             });
+
+           },
+           tooltip: 'Magnify',
+           child: const Icon(CupertinoIcons.zoom_in,size: 30,),
+         ),
+
+
+        body:
+        SingleChildScrollView(
+          controller: scrollController,
+          child: Stack(
+              children:[
+                GestureDetector(
+                  onPanDown: (details) {
+                    // setState(() {
+                    //   isHoldingDown = true;
+                    //   dragGesturePosition = details.localPosition;
+                    // });
+                  },
+                  onPanEnd: (details) {
+                    // setState(() {
+                    //   isHoldingDown = false;
+                    //   dragGesturePosition = null;
+                    // });
+                  },
+                  onPanUpdate: (details) {
+                    if (isHoldingDown) {
+                      setState(() {
+                        dragGesturePosition = details.localPosition;
+                      });
+                    }
+                    },
+                    child:   Column(
+                      children: [
+
+
+
+                        widget.foodList!=kfcList?
+                        foodView(filteredList,"default")
+                            :
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 24.0),
+                              child: Container(
+                                height: 100,
+
+                                width: 200,
+                                child: Image.asset(streetFoodType[0]),
+                              ),
+                            ),
+                            MediaQuery.removePadding(
+                                removeTop: true,
+                                context: context,
+                                child: foodView(kfcList,"kfc")),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Divider(thickness: 4,),
+                            ),
+                            Container(
+                              height: 100,
+                              width: 200,
+                              child: Image.asset(streetFoodType[1]),
+                            ),
+                            MediaQuery.removePadding(
+                                removeTop: true,
+                                context: context,
+                                child: foodView(macList,"mac")),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Divider(thickness: 4,),
+                            ),
+                            Container(
+                              height: 100,
+                              width: 200,
+                              child: Image.asset(streetFoodType[2]),
+                            ),
+                            MediaQuery.removePadding(
+                                removeTop: true,
+                                context: context,
+                                child: foodView(cinabbonList,"cinabbon")),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Divider(thickness: 4,),
+                            ),
+                            MediaQuery.removePadding(
+                                removeTop: true,
+                                context: context,
+                                child: foodView(streetList,"street")),
+                          ],
+                        )
+
+
+
+
+
+                      ],
+                    ),
                 ),
-              ),
-              MediaQuery.removePadding(
-                  removeTop: true,
-                  context: context,
-                  child: foodView(kfcList,"kfc")),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Divider(thickness: 4,),
-              ),
-              Container(
-                height: 100,
-                width: 200,
-                child: Image.asset(streetFoodType[1]),
-              ),
-              MediaQuery.removePadding(
-                  removeTop: true,
-                  context: context,
-                  child: foodView(macList,"mac")),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Divider(thickness: 4,),
-              ),
-              Container(
-                height: 100,
-                width: 200,
-                child: Image.asset(streetFoodType[2]),
-              ),
-              MediaQuery.removePadding(
-                  removeTop: true,
-                  context: context,
-                  child: foodView(cinabbonList,"cinabbon")),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Divider(thickness: 4,),
-              ),
-              MediaQuery.removePadding(
-                  removeTop: true,
-                  context: context,
-                  child: foodView(streetList,"street")),
-            ],
-          )
+                if (dragGesturePosition != null&&isHoldingDown==true)
+                  isHoldingDown ? Positioned(
+                    left: dragGesturePosition!.dx - 75, // Adjust the position to center the magnifier
+                    top: dragGesturePosition!.dy - 75,
+                    child: Container(
+                      width: 150,
+                      height: 150,
+                      child: RawMagnifier(
+                        decoration: MagnifierDecoration(
+                          shape: CircleBorder(
+                            side: BorderSide(color: Colors.black, width: 3),
+                          ),
+                        ),
+                        size: Size(150, 150),
+                        magnificationScale: 1.6,
+                      ),
+                    ),
+                  ):SizedBox()
+              ]
+          ),
+        )
 
 
 
 
 
-        ],
-      )),
+
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (isHoldingDown) {
+        setState(() {
+          final scrollOffset = scrollController.offset;
+          dragGesturePosition = dragGesturePosition?.translate(0, scrollOffset);
+        });
+      }
+    });
   }
 }

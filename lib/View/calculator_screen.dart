@@ -120,7 +120,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   setState(() {
                     var insulinDoze=(int.parse(englishNumbers(measuredInsulin.text))-int.parse(englishNumbers(setPoint)))/int.parse(englishNumbers(ICF));
                     var carbInsulinDoze=int.parse(englishNumbers(measuredCarb.text))/int.parse(englishNumbers(ICR));
-                    var decimalString=insulinDoze+carbInsulinDoze;
+                    var decimalString=insulinDoze.toInt()+carbInsulinDoze.toInt();
                     result=decimalString.toInt();
                     if(result<0){
                       var snackBar = SnackBar(content: Text('قيمه غير صحيحه',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),backgroundColor: primaryColor,);

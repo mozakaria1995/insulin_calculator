@@ -135,6 +135,8 @@ List<FoodModel> nutsList=[
 ];
 List<FoodModel> superMarketList=[
   FoodModel(image: dinnerImagePath("pepsi"), title: "بيبسى", description: "حجم 350 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("72.4"): "72.4"),
+  FoodModel(image: supermarketImagePath("8"), title: "بيبسى", description: "حجم 320 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("70.4"): "70.4"),
+  FoodModel(image: supermarketImagePath("7"), title: "بيبسى جيب ", description: "حجم 240 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("52.8"): "52.8"),
 
   FoodModel(image: supermarketImagePath("1"), title: "مولتو قطع فراولة", description: "كيس", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("42"): "42"),
   FoodModel(image: supermarketImagePath("2"), title: "عصير جهينة عنب", description: "علبة عصير", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("37"): "37"),
@@ -142,8 +144,6 @@ List<FoodModel> superMarketList=[
   FoodModel(image: supermarketImagePath("4"), title: "لبن مكس", description: "حجم 200 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("23"): "23"),
   FoodModel(image: supermarketImagePath("5"), title: "زبادو", description: "حجم 440 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("55"): "55"),
   FoodModel(image: supermarketImagePath("6"), title: "ريد بول مشروب طاقة", description: "حجم 250 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("55"): "55"),
-  FoodModel(image: supermarketImagePath("7"), title: "بيبسى جيب ", description: "حجم 240 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("52.8"): "52.8"),
-  FoodModel(image: supermarketImagePath("8"), title: "بيبسى", description: "حجم 320 مل", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("70.4"): "70.4"),
   FoodModel(image: supermarketImagePath("9"), title: "شيكولاتة جالكسى", description: "حجم 18 جرام", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("10"): "10"),
   FoodModel(image: supermarketImagePath("10"), title: "شيكولاتة بوينتى", description: "حجم 57 جرام", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("28"): "28"),
   FoodModel(image: supermarketImagePath("11"), title: "شيكولاتة بوينتى", description: "حجم صغير 28.5 جرام - قطعة واحدة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("14"): "14"),
@@ -174,10 +174,10 @@ List<FoodModel> kfcList=[
   FoodModel(image: kfcImagePath("9"), title: "صدر عادى", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("14"): "14"),
   FoodModel(image: kfcImagePath("10"), title: "فخذ عادى", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers( "22"): "22"),
   FoodModel(image: kfcImagePath("11"), title: "جناح عادى", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("5"): "5"),
-  FoodModel(image: kfcImagePath("12"), title: "استربس عادى", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers( "7"): "7"),
+  FoodModel(image: kfcImagePath("17"), title: "استربس عادى", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers( "7"): "7"),
   FoodModel(image: kfcImagePath("13"), title: "دبوس حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("5.5"): "5.5"),
   FoodModel(image: kfcImagePath("14"), title: "صدر حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("29"): "29"),
-  FoodModel(image: kfcImagePath("16"), title: "فخذ حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("30"): "30"),
+  FoodModel(image: kfcImagePath("10"), title: "فخذ حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("30"): "30"),
   FoodModel(image: kfcImagePath("16"), title: "جناح حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("10"): "10"),
   FoodModel(image: kfcImagePath("17"), title: "استربس حار", description: "قطعة", type: "كربوهيدرات", carbRatio:selectedLang!="en"?arabicNumbers("7.2"): "7.2"),
 
